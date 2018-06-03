@@ -1,6 +1,5 @@
 # Appointment-Dashboard
 
-###Features
 
 This is a appointment portal, where user can have following features
 - Submit a new appointment with date, time and description 
