@@ -1,0 +1,62 @@
+#mainHeader{
+    background-color:#d51900;
+}
+#headerAnchor{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-family: AkzidenzGroteskStd,sans-serif;  
+}
+#navBarFixed{
+    position:relative;
+    margin: 0px;
+}
+.navbar-header{
+    padding: 0px 15px;
+}
+#new{
+    margin-top: 20px;
+    margin-left: 45%
+}
+#form-container{
+    margin: 20px;
+}
+
+.form-appointment {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+    font-weight: 700
+}
+
+h1 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+ font-weight: 700!important;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#appointment-data{
+    padding-top: 10px;
+}
+#search{
+    margin-left: 35%;
+}
+#tblDiv{
+    padding: 5% 20%;
+}
