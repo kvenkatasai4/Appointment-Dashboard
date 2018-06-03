@@ -1,0 +1,81 @@
+<nav class="navbar  navbar-fixed-top" id=navBarFixed>
+    <div class="container-fluid" id="mainHeader">
+        <div class="navbar-header">
+            <a class="navbar-brand" id="headerAnchor"> Appointment Dashboard</a>
+        </div>
+    </div>
+</nav>
+<div class="alert alert-danger alert-dismissible fade in" style=" margin-left:10%;margin-top:1%;margin-right:10%;text-align: center" [hidden]="!isAlertBox" id="alertBox">
+        <strong>Error!</strong> {{form_error}}
+</div>
+<div style="margin-left: 44%; margin-top: 1%; color: green" [hidden]="!success">Submitted Successfully!</div>
+<div id="new" [hidden]="isData">
+    <button class="btn btn-primary" (click)="validate()">Need Appointment</button>
+</div>
+<div [hidden]="!isData" id="form-container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <div class="form-appointment">
+              <h1>Book Appoitment</h1>
+              <div class="row" id="appointment-data">
+                <div class="col-sm-4" style="text-align: right; padding-top: 10px;">Date</div>
+                <div class="col-sm-7"><input type="date" class="form-control input-sm chat-input" #date/></div>
+              </div>
+              <div class="row" id="appointment-data">
+                <div class="col-sm-4" style="text-align: right; padding-top: 10px;">Time</div>
+                <div class="col-sm-7"><input type="time" class="form-control input-sm chat-input" #time/></div>
+              </div>
+              <div class="row" id="appointment-data">
+                <div class="col-sm-4" style="text-align: right; padding-top: 10px;">Description</div>
+                <div class="col-sm-7">
+                  <textarea rows="4" cols="50" class="form-control input-sm chat-input" placeholder="Description" style="resize: none" #desc
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row" id="appointment-data">
+                <div class="col-sm-6" style="text-align: center;">
+                  <button class="btn btn-primary" (click)="validate()" style="width: 60%">Cancel</button>
+                </div>
+                <div class="col-sm-6" tyle="text-align: center;">
+                  <button class="btn btn-primary" style="width: 60%" (click)="submit(date.value, time.value, desc.value)">Submit</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="search">
+  <div class="row" style="padding-top: 20px;">
+    <div id="custom-search-input">
+        <div class="input-group col-md-6">
+          <input type="text" class="form-control input-lg" placeholder="Search" #textvalue/>
+            <span class="input-group-btn">
+              <button class="btn btn-info btn-lg" type="button" (click)="search(textvalue.value)">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="alert alert-danger alert-dismissible fade in" style=" margin-left:10%;margin-top:1%;margin-right:10%;text-align: center" [hidden]="!isTableAlertBox" id="alertBox">
+        <strong>Error!</strong> {{table_error}}
+</div>
+<div id="tblDiv" class="row" [hidden]="!isTable">
+      <table st-table="rowCollection" class="table table-striped">
+        <thead>
+          <tr>
+            <th style="width: 15%; font-weight: 700"> Date</th>
+            <th style="width: 15%; font-weight: 700"> Time</th>
+            <th style="font-weight: 700"> Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of data">
+            <td>{{d["date"]}}</td>
+            <td>{{d["time"]}}</td>
+            <td>{{d["description"]}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
